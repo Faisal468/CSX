@@ -4,11 +4,11 @@ import { Mail, Phone, MapPin, Send, Clock } from "lucide-react";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
-    name: "",
+   fullName: "",          // ✅ Changed from "name"
     email: "",
     company: "",
-    service: "",
-    message: ""
+    serviceInterested: "", // ✅ Changed from "service"
+    projectDetails: "" 
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -26,15 +26,15 @@ const Contact: React.FC = () => {
     setSubmitError("");
 
     try {
-      const response = await fetch("http://localhost:5173/api/contact", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          fullName: formData.name,
+          fullName: formData.fullName,
           email: formData.email,
           company: formData.company,
-          serviceInterested: formData.service,
-          projectDetails: formData.message
+          serviceInterested: formData.serviceInterested,
+          projectDetails: formData.projectDetails
         })
       });
 
@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
       }
 
       // Reset form
-      setFormData({ name: "", email: "", company: "", service: "", message: "" });
+      setFormData({ fullName: "", email: "", company: "", serviceInterested: "", projectDetails: "" });
       setSubmitSuccess(true);
 
       // Hide success after 5s
@@ -129,7 +129,7 @@ const Contact: React.FC = () => {
                       type="text"
                       id="name"
                       name="name"
-                      value={formData.name}
+                      value={formData.fullName}
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-white/10 border border-purple-500/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
@@ -175,7 +175,7 @@ const Contact: React.FC = () => {
                     <select
                       id="service"
                       name="service"
-                      value={formData.service}
+                      value={formData.serviceInterested}
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-white/10 border border-purple-500/30 rounded-xl text-white focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
                     >
@@ -196,7 +196,7 @@ const Contact: React.FC = () => {
                   <textarea
                     id="message"
                     name="message"
-                    value={formData.message}
+                    value={formData.projectDetails}
                     onChange={handleChange}
                     required
                     rows={6}
