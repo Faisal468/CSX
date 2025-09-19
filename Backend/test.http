@@ -1,0 +1,56 @@
+### Register a new user
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Test User",
+  "email": "test@example.com",
+  "password": "123456",
+  "role": "user"
+}
+
+### Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "123456"
+}
+
+### Get current user (requires auth token)
+GET http://localhost:5000/api/auth/me
+Authorization: Bearer YOUR_TOKEN_HERE
+
+### Get all users (admin only)
+GET http://localhost:5000/api/users
+Authorization: Bearer YOUR_TOKEN_HERE
+
+### Create a new user (admin only)
+POST http://localhost:5000/api/users
+Authorization: Bearer YOUR_TOKEN_HERE
+Content-Type: application/json
+
+{
+  "name": "Another User",
+  "email": "another@example.com",
+  "password": "123456",
+  "role": "user"
+}
+
+### Get a single user (admin only)
+GET http://localhost:5000/api/users/USER_ID_HERE
+Authorization: Bearer YOUR_TOKEN_HERE
+
+### Update a user (admin only)
+PUT http://localhost:5000/api/users/USER_ID_HERE
+Authorization: Bearer YOUR_TOKEN_HERE
+Content-Type: application/json
+
+{
+  "name": "Updated Name"
+}
+
+### Delete a user (admin only)
+DELETE http://localhost:5000/api/users/USER_ID_HERE
+Authorization: Bearer YOUR_TOKEN_HERE

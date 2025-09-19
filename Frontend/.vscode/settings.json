@@ -1,0 +1,5 @@
+{
+    "monica-code.pauseTabAutocompleteOnBattery": false,
+    "monica-code.pauseCodebaseIndexOnStart": false,
+    "git.ignoreLimitWarning": true
+}
