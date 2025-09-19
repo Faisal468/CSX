@@ -4,11 +4,11 @@ import { Mail, Phone, MapPin, Send, Clock } from "lucide-react";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
-   fullName: "",          // ✅ Changed from "name"
+    fullName: "",
     email: "",
     company: "",
-    serviceInterested: "", // ✅ Changed from "service"
-    projectDetails: "" 
+    serviceInterested: "",
+    projectDetails: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -122,13 +122,13 @@ const Contact: React.FC = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="fullName" className="block text-sm font-medium text-gray-300 mb-2">
                       Full Name *
                     </label>
                     <input
                       type="text"
-                      id="name"
-                      name="name"
+                      id="fullName"
+                      name="fullName"
                       value={formData.fullName}
                       onChange={handleChange}
                       required
@@ -169,12 +169,12 @@ const Contact: React.FC = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="serviceInterested" className="block text-sm font-medium text-gray-300 mb-2">
                       Service Interested In
                     </label>
                     <select
-                      id="service"
-                      name="service"
+                      id="serviceInterested"
+                      name="serviceInterested"
                       value={formData.serviceInterested}
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-white/10 border border-purple-500/30 rounded-xl text-white focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
@@ -190,12 +190,12 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="projectDetails" className="block text-sm font-medium text-gray-300 mb-2">
                     Project Details *
                   </label>
                   <textarea
-                    id="message"
-                    name="message"
+                    id="projectDetails"
+                    name="projectDetails"
                     value={formData.projectDetails}
                     onChange={handleChange}
                     required
