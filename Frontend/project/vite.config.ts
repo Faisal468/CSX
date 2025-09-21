@@ -18,3 +18,4 @@ export default defineConfig({
   port: 5173,   // 👈 Optional: keep a fixed port
   },
 })
+  
