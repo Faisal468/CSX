@@ -65,7 +65,6 @@ const Footer: React.FC = () => {
             <div className="flex items-center mb-4">
               <img 
                 src={logoo}
-                // alt="CloudSphereX Logo" 
                 className="h-10 w-auto"
               />
               <span className="ml-3 text-2xl font-bold text-white">
