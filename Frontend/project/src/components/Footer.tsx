@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex items-center mb-4">
               <img 
-                src="/src/assets/logoo.png" 
+                src="../assets/logoo.png" 
                 alt="CloudSphereX Logo" 
                 className="h-10 w-auto"
               />
