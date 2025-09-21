@@ -22,6 +22,7 @@ import {
   FaGithub, 
   
 } from 'react-icons/fa';
+import logoo from '../assets/logoo.png';
 
 const Footer: React.FC = () => {
   const quickLinks = [
@@ -63,8 +64,8 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex items-center mb-4">
               <img 
-                src="../assets/logoo.png" 
-                alt="CloudSphereX Logo" 
+                src={logoo}
+                // alt="CloudSphereX Logo" 
                 className="h-10 w-auto"
               />
               <span className="ml-3 text-2xl font-bold text-white">
