@@ -34,7 +34,7 @@ const Services: React.FC = () => {
       title: 'AcademiaX',
       description: 'Educational technology solutions and learning management systems for modern academic institutions.',
       icon: GraduationCap,
-      features: ['LMS Development', 'E-learning Platforms', 'Student Portals', 'Assessment Tools'],
+      features: ['Zoom', 'MS Teams', 'Google meet', 'Canvas', 'Turnitin', 'Quilbot'],
       color: 'from-orange-500 to-red-500'
     },
     {
